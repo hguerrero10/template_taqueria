@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_foodybite/screens/home.dart';
+import 'package:flutter_foodybite/screens/perfil.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -88,16 +89,29 @@ class _MainScreenState extends State<MainScreen> {
         ),
         onPressed: null,
       );
-    } else {
+    } 
+    else {
       return IconButton(
         icon: Icon(
           icons[index],
           size: 24.0,
         ),
-        color: _page == index
-            ? Theme.of(context).accentColor
-            : Theme.of(context).textTheme.caption.color,
-        onPressed: () => _pageController.jumpToPage(index),
+        color: _page == index ? Theme.of(context).accentColor
+          : Theme.of(context).textTheme.caption.color,
+        onPressed: () {
+
+          if(index == 4){
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) {
+                  return PerfilForm();
+                }
+              )
+            );
+          } 
+          
+          _pageController.jumpToPage(index);
+        }
       );
     }
   }

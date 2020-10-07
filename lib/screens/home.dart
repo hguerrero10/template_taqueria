@@ -19,17 +19,23 @@ class Home extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             SizedBox(height: 20.0),
-            buildCategoryRow('Trending Restaurants', context),
+            buildCategoryRow('Platillos en Tendencia', context),
             SizedBox(height: 10.0),
             buildRestaurantList(context),
             SizedBox(height: 10.0),
-            buildCategoryRow('Category', context),
+            buildCategoryRow('Productos', context),
+            Column(
+              children: <Widget>[
+                _productos('assets/food7.jpeg', 'Pizza Tradicional', 'Queso Manchego, Peperoni, Tomate', '\$ 95.00', () {}),
+                Divider(),
+                _productos('assets/food2.jpeg', 'Tacos Gobernador', 'Camaron, Piña, Tomate', '\$ 65.00', () {}),
+                Divider(),
+                _productos('assets/food3.jpeg', 'Hamburguesa con papas', 'Carne 100% de res, Lechuga, Tomate', '\$ 80.00', () {}),
+              ],
+            ),
+            buildCategoryRow('Categorias', context),
             SizedBox(height: 10.0),
             buildCategoryList(context),
-            SizedBox(height: 20.0),
-            buildCategoryRow('Friends', context),
-            SizedBox(height: 10.0),
-            buildFriendsList(),
             SizedBox(height: 30.0),
           ],
         ),
@@ -50,7 +56,7 @@ class Home extends StatelessWidget {
         ),
         FlatButton(
           child: Text(
-            "See all (9)",
+            "Ver Todos (5)",
             style: TextStyle(
               color: Theme.of(context).accentColor,
             ),
@@ -132,28 +138,84 @@ class Home extends StatelessWidget {
     );
   }
 
-  buildFriendsList() {
+  _productos(String img, String titulo, String desc, String precio, onPress) {
     return Container(
-      height: 50.0,
-      child: ListView.builder(
-        primary: false,
-        scrollDirection: Axis.horizontal,
-        shrinkWrap: true,
-        itemCount: friends == null ? 0 : friends.length,
-        itemBuilder: (BuildContext context, int index) {
-          String img = friends[index];
-
-          return Padding(
-            padding: const EdgeInsets.only(right: 5.0),
-            child: CircleAvatar(
-              backgroundImage: AssetImage(
-                img,
+      child: Row(
+          children: <Widget>[
+            
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  bottomRight: Radius.circular(5.0),
+                  bottomLeft: Radius.circular(5.0),
+                  topRight: Radius.circular(5.0),
+                  topLeft: Radius.circular(5.0)
+                )
               ),
-              radius: 25.0,
+              child: Image.asset(
+                img,
+                height: 130,
+                width: 160,
+                // fit: BoxFit.cover,
+              ),
             ),
-          );
-        },
-      ),
+            SizedBox(width: 15),
+            Column(
+              children: <Widget>[
+                Container(
+                  width: 150,
+                  child: Text(
+                    titulo,
+                    style: TextStyle(
+                      fontSize: 13,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 6),
+                Container(
+                  width: 150,
+                  child: Text(
+                    desc,
+                    style: TextStyle(
+                      fontSize: 13,
+                      color: Colors.black,
+                    ),
+                    
+                  ),
+                ),
+                SizedBox(height: 6),
+                Container(
+                  width: 150,
+                  child: Text(
+                    precio,
+                    style: TextStyle(
+                      fontSize: 13,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                // RGB(205, 92, 92)
+
+                SizedBox(height: 10),
+                Container(
+                  width: 150,
+                  child: OutlineButton(
+                    child: Text("Agregar"),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                    color:  Color.fromRGBO(205, 92, 92, 1),
+                    textColor:  Color.fromRGBO(205, 92, 92, 1),
+                    borderSide: BorderSide(color:  Color.fromRGBO(205, 92, 92, 1)),
+                    onPressed: onPress,
+                  ),
+                )
+              ],
+            )
+          ],
+        ),
+      
     );
   }
 }
