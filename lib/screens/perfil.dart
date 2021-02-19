@@ -10,6 +10,20 @@ class MapScreenState extends State<PerfilForm> with SingleTickerProviderStateMix
   bool _status = true;
   final FocusNode myFocusNode = FocusNode();
 
+  TextEditingController _nombre = new TextEditingController();
+  TextEditingController _correo = new TextEditingController();
+  TextEditingController _numero = new TextEditingController();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    _nombre = TextEditingController(text: 'Grupo TLK');
+    _correo = TextEditingController(text: 'gpotlk@gmail.com');
+    _numero = TextEditingController(text: '8187773131');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -141,12 +155,13 @@ class MapScreenState extends State<PerfilForm> with SingleTickerProviderStateMix
                             mainAxisSize: MainAxisSize.max,
                             children: <Widget>[
                               Flexible(
-                                child: TextField(
+                                child: TextFormField(
                                   decoration: const InputDecoration(
                                     hintText: "Escriba su nombre",
                                   ),
                                   enabled: !_status,
                                   autofocus: !_status,
+                                  controller: _nombre,
                                 ),
                               ),
                             ],
@@ -178,10 +193,12 @@ class MapScreenState extends State<PerfilForm> with SingleTickerProviderStateMix
                             mainAxisSize: MainAxisSize.max,
                             children: <Widget>[
                               Flexible(
-                                child: TextField(
+                                child: TextFormField(
                                   decoration: const InputDecoration(
-                                      hintText: "Escriba su correo"),
+                                    hintText: "gpotlk@gmail.com"
+                                  ),
                                   enabled: !_status,
+                                  controller: _correo,
                                 ),
                               ),
                             ],
@@ -214,11 +231,12 @@ class MapScreenState extends State<PerfilForm> with SingleTickerProviderStateMix
                             mainAxisSize: MainAxisSize.max,
                             children: <Widget>[
                               Flexible(
-                                child: TextField(
+                                child: TextFormField(
                                   decoration: const InputDecoration(
                                     hintText: "Escriba su celular"
                                   ),
                                   enabled: !_status,
+                                  controller: _numero,
                                 ),
                               ),
                             ],

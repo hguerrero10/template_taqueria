@@ -33,7 +33,7 @@ class SearchCard extends StatelessWidget {
               ),
               borderRadius: BorderRadius.circular(5.0),
             ),
-            hintText: "Search..",
+            hintText: "Buscar...",
             prefixIcon: Icon(
               Icons.search,
               color: Colors.black,

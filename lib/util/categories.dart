@@ -2,33 +2,33 @@ import 'package:flutter/material.dart';
 
 List categories = [
     {
-    "name": "Mexicana",
+    "name": "Tacos",
     "color1": Color.fromARGB(100, 0, 0, 0),
     "color2": Color.fromARGB(100, 0, 0, 0),
-    "img": "assets/food5.jpeg"
+    "img": "assets/tacos.jpg"
   },
   {
-    "name": "Italiana",
+    "name": "Tortas",
     "color1": Color.fromARGB(100, 0, 0, 0),
     "color2": Color.fromARGB(100, 0, 0, 0),
-    "img": "assets/food1.jpeg"
+    "img": "assets/torta.jpg"
   },
   {
-    "name": "China",
+    "name": "Hamburguesas",
     "color1": Color.fromARGB(100, 0, 0, 0),
     "color2": Color.fromARGB(100, 0, 0, 0),
-    "img": "assets/food2.jpeg"
+    "img": "assets/hamburguesa.jpg"
   },
   {
-    "name": "Nigeriana",
+    "name": "Desayunos",
     "color1": Color.fromARGB(100, 0, 0, 0),
     "color2": Color.fromARGB(100, 0, 0, 0),
-    "img": "assets/food3.jpeg"
+    "img": "assets/desayunos.jpg"
   },
   {
-    "name": "Española",
+    "name": "Comidas",
     "color1": Color.fromARGB(100, 0, 0, 0),
     "color2": Color.fromARGB(100, 0, 0, 0),
-    "img": "assets/food4.jpeg"
+    "img": "assets/comidas.jpg"
   }
 ];

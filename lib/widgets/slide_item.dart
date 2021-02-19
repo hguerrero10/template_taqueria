@@ -84,10 +84,10 @@ class _SlideItemState extends State<SlideItem> {
                       child: Padding(
                         padding: EdgeInsets.all(4.0),
                         child: Text(
-                          " OPEN ",
+                          " HOT ",
                           style: TextStyle(
                             fontSize: 10.0,
-                            color: Colors.green,
+                            color: Colors.red,
                             fontWeight: FontWeight.bold,
                           ),
                         ),

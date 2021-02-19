@@ -1,6 +1,9 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_foodybite/screens/detalle1.dart';
+import 'package:flutter_foodybite/screens/detalle2.dart';
+import 'package:flutter_foodybite/screens/detalle3.dart';
 import 'package:flutter_foodybite/screens/trending.dart';
 import 'package:flutter_foodybite/util/categories.dart';
 import 'package:flutter_foodybite/util/friends.dart';
@@ -26,11 +29,11 @@ class Home extends StatelessWidget {
             buildCategoryRow('Productos', context),
             Column(
               children: <Widget>[
-                _productos('assets/food7.jpeg', 'Pizza Tradicional', 'Queso Manchego, Peperoni, Tomate', '\$ 95.00', () {}),
+                _productos('assets/gringa.jpg', 'Gringas', 'Queso, Trompo, Piña', '\$ 40.00', ()=> Navigator.of(context).push(MaterialPageRoute(builder: (context) { return DetalleForm();}))),
                 Divider(),
-                _productos('assets/food2.jpeg', 'Tacos Gobernador', 'Camaron, Piña, Tomate', '\$ 65.00', () {}),
+                _productos('assets/campechana.jpg', 'Campechanas', 'Carne de bisteck, Queso, Trompo', '\$ 50.00', ()=> Navigator.of(context).push(MaterialPageRoute(builder: (context) { return DetalleForm2();}))),
                 Divider(),
-                _productos('assets/food3.jpeg', 'Hamburguesa con papas', 'Carne 100% de res, Lechuga, Tomate', '\$ 80.00', () {}),
+                _productos('assets/tacos-al-pastor.jpg', 'Tacos al pastor', 'Trompo, Bisteck, Cebolla', '\$ 80.00', ()=> Navigator.of(context).push(MaterialPageRoute(builder: (context) { return DetalleForm3();}))),
               ],
             ),
             buildCategoryRow('Categorias', context),

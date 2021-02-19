@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_foodybite/screens/main_screen.dart';
 import 'package:flutter_foodybite/util/const.dart';
+import 'package:flutter_foodybite/widgets/splash.dart';
 
 void main() async {
   runApp(MyApp());
@@ -19,7 +20,8 @@ class _MyAppState extends State<MyApp> {
       title: Constants.appName,
       theme: Constants.lightTheme,
       darkTheme: Constants.darkTheme,
-      home: MainScreen(),
+      home: SplashScreen(),
+
     );
   }
 }

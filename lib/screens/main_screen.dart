@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_foodybite/screens/detalle1.dart';
+import 'package:flutter_foodybite/screens/detalle_entrega.dart';
+import 'package:flutter_foodybite/screens/direcciones.dart';
 import 'package:flutter_foodybite/screens/home.dart';
 import 'package:flutter_foodybite/screens/perfil.dart';
 
@@ -52,7 +55,17 @@ class _MainScreenState extends State<MainScreen> {
         child: Icon(
           Icons.add,
         ),
-        onPressed: () => _pageController.jumpToPage(2),
+        onPressed: () {
+
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) {
+                return Direcciones();
+              }
+            )
+          );
+         _pageController.jumpToPage(2);
+        }
       ),
     );
   }
@@ -96,8 +109,7 @@ class _MainScreenState extends State<MainScreen> {
           icons[index],
           size: 24.0,
         ),
-        color: _page == index ? Theme.of(context).accentColor
-          : Theme.of(context).textTheme.caption.color,
+        color: _page == index ? Theme.of(context).accentColor : Theme.of(context).textTheme.caption.color,
         onPressed: () {
 
           if(index == 4){
@@ -105,6 +117,16 @@ class _MainScreenState extends State<MainScreen> {
               MaterialPageRoute(
                 builder: (context) {
                   return PerfilForm();
+                }
+              )
+            );
+          } 
+
+          if(index == 3){
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) {
+                  return DetalleEntrega();
                 }
               )
             );
